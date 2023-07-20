@@ -2,6 +2,7 @@ import Answer from "./Answer";
 
 
 const Question = () => {
+
     return (
         <div>
             <div className="question">Text of the question</div>

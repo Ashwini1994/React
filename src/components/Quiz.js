@@ -1,17 +1,20 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Question from "./Question";
+import { QuizContext } from "../contexts/quiz";
+
 
 const Quiz = () => {
-    const [question, setQuestion] = useState(0);
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    console.log('currentQuestionIndex is ', currentQuestionIndex);
+
+    const [quizState, dispatch] = useContext(QuizContext);
+    console.log('QuizState:', quizState);
+
     return (
         <div className="quiz">
             <div className="score" >Question 1/8</div>
             <Question />
             <div
                 className="next-button"
-                onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
+                onClick={() => dispatch({ type: "NEXT_QUESTION" })}
             >Next Question
             </div>
         </div>
