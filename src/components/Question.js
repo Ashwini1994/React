@@ -5,7 +5,7 @@ import { QuizContext } from "../contexts/quiz";
 
 const Question = () => {
 
-    const [quizState] = useContext(QuizContext);
+    const [quizState, dispatch] = useContext(QuizContext);
     console.log('In question: quizstate:', quizState);
 
     const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
@@ -14,10 +14,19 @@ const Question = () => {
         <div>
             <div className="question">{currentQuestion.question}</div>
             <div className="answers">
-                <Answer />
-                <Answer />
-                <Answer />
-                <Answer />
+                {quizState.options.map((option, index) => (
+                    <Answer
+                        optionsText={option}
+                        key={index}
+                        index={index}
+                        currentAnswer={quizState.currentAnswer}
+                        correctAnswer={currentQuestion.correctAnswer}
+                        onSelectOption={(optionsText) =>
+                            dispatch({ type: 'SELECT_ANSWER', payload: optionsText })
+                        }
+
+                    />
+                ))}
             </div>
 
         </div>

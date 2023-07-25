@@ -15,7 +15,7 @@ const Quiz = () => {
                     <div className="congratulations">Congratulations!!</div>
                     <div className="results-info">
                         <div>You've completed the quiz successfully! </div>
-                        <div>Your score is x of {quizState.questions.length}  </div>
+                        <div>Your score is {quizState.quizScore} of {quizState.questions.length}  </div>
                     </div>
                     <div
                         className="next-button"
