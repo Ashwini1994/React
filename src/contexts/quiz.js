@@ -13,7 +13,6 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
-    console.log('Reducer:', state, action);
 
     switch (action.type) {
         case 'NEXT_QUESTION':
@@ -35,7 +34,10 @@ const reducer = (state, action) => {
             return initialState;
         case 'SELECT_ANSWER':
             {
-                const quizScore = action.payload === state.questions[state.currentQuestionIndex].correctAnswer ? state.quizScore + 1 : state.quizScore;
+                const quizScore = action.payload === state.questions[state
+                    .currentQuestionIndex].correctAnswer
+                    ? state.quizScore + 1
+                    : state.quizScore;
                 return {
                     ...state,
                     currentAnswer: action.payload,

@@ -6,7 +6,6 @@ import { QuizContext } from "../contexts/quiz";
 const Quiz = () => {
 
     const [quizState, dispatch] = useContext(QuizContext);
-    console.log('QuizState:', quizState);
 
     return (
         <div className="quiz">
