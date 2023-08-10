@@ -9,18 +9,19 @@ const Quiz = () => {
     const apiUrl = 'https://opentdb.com/api.php?amount=20&category=10&difficulty=medium&type=multiple&encode=url3986';
 
     useEffect(() => {
-        console.log('Initialize');
+        if (quizState.questions.length > 0) {
+            return;
+        }
         fetch(apiUrl)
             .then((res) => res.json())
             .then((data) => {
-                console.log('data:', data);
                 dispatch(
                     {
                         type: "LOADED_QUESTIONS",
                         payload: data.results
                     });
             });
-    }, []);
+    });
 
     return (
         <div className="quiz">

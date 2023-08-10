@@ -44,7 +44,6 @@ const reducer = (state, action) => {
             }
         case 'LOADED_QUESTIONS':
             {
-
                 const normalizedQuestions = normalizeQuestions(action.payload);
                 return {
                     ...state,
@@ -55,7 +54,6 @@ const reducer = (state, action) => {
         default: {
             return state;
         }
-
     }
 };
 
