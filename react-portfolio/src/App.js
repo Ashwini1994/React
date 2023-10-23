@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+    const [displayBio, setDisplayBio] = useState(false);
+
+    const toggleDisplayBio = () => setDisplayBio(!displayBio);
+
+    return (
+        < div >
+            <h1>Hello!</h1>
+            <p>My name is Ashwini. I'm a software engineer.</p>
+            <p>I'm always looking forward to working on meaningful projects.</p>
+            {displayBio
+                ? (<div>
+                    <p> I live in Kaiserslautern, Germany and I am improving my react skills with projects</p>
+                    <p> Besides coding, I love reading, hiking, cycling and also running</p>
+                    <div>
+                        <button onClick={toggleDisplayBio}>Show Less</button>
+                    </div>
+                </div>
+                ) : (
+                    <div>
+                        <button onClick={toggleDisplayBio}>Read more</button>
+                    </div>
+                )
+            }
+        </div >
+    );
+
+}
 export default App;
