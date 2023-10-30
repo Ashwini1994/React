@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Projects from "./Projects";
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
             <p>My name is Ashwini. I'm a software engineer.</p>
             <p>I'm always looking forward to working on meaningful projects.</p>
             {displayBio
-                ? (<div>
+                ?
+                (<div>
                     <p> I live in Kaiserslautern, Germany and I am improving my react skills with projects</p>
                     <p> Besides coding, I love reading, hiking, cycling and also running</p>
                     <div>
@@ -25,6 +27,8 @@ function App() {
                     </div>
                 )
             }
+            <hr />
+            <Projects />
         </div >
     );
 
