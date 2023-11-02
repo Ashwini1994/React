@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import "../../index.css";
 
 function Button({ children, version, type, isDisabled }) {
-  console.log(isDisabled);
   return (
     <button type={type} disabled={isDisabled} className={`btn btn-${version}`}>
       {children}
