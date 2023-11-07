@@ -1,11 +1,10 @@
 import React from "react";
-import FeedbackItem from "./FeedbackItem";
 import PropTypes from "prop-types";
 
+import FeedbackItem from "./FeedbackItem";
+
 function FeedbackList({ feedback, handleDelete }) {
-  {
-    !feedback || (feedback.length && <p>No Feedback yet</p>);
-  }
+  if (!feedback || feedback.length) return <p>No Feedback yet</p>;
 
   return (
     <div className="feedback-list">
