@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { motion, AnimatePresence } from "framer-motion";
 
 import FeedbackItem from "./FeedbackItem";
 
 function FeedbackList({ feedback, handleDelete }) {
-  if (!feedback || feedback.length) return <p>No Feedback yet</p>;
+  if (!feedback || feedback.length === 0) return <p>No Feedback yet</p>;
 
   return (
     <div className="feedback-list">
