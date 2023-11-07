@@ -1,28 +1,24 @@
-import React from 'react';
-import '../index.css';
-import { useState } from 'react';
-import Card from './shared/Card';
-import PropTypes from 'prop-types';
-import { FaTimes } from 'react-icons/fa';
+import React from "react";
+import PropTypes from "prop-types";
+import { FaTimes } from "react-icons/fa";
+
+import "../index.css";
+import Card from "./shared/Card";
 
 function FeedbackItem({ item, handleDelete }) {
-
-    return (
-
-        <Card >
-            <div className='num-display'>{item.rating}</div>
-            <button onClick={() => handleDelete(item.id)}
-                className='close'>
-                <FaTimes color='purple' />
-            </button>
-            <div className='text-display'>{item.text}</div>
-        </Card>
-    );
+  return (
+    <Card>
+      <div className="num-display">{item.rating}</div>
+      <button onClick={() => handleDelete(item.id)} className="close">
+        <FaTimes color="purple" />
+      </button>
+      <div className="text-display">{item.text}</div>
+    </Card>
+  );
 }
 
 FeedbackItem.propTypes = {
-    item: PropTypes.object.isRequired,
-
+  item: PropTypes.object.isRequired,
 };
 
 export default FeedbackItem;
