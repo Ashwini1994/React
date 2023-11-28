@@ -1,1 +1,1 @@
-# Parent directory containing all React projects.
+#Directory containing all React projects.
