@@ -1,24 +1,20 @@
-import React from "react";
-import PROJECTS from './data/projects';
+import React, { Component } from "react";
+import PROJECTS from "./data/projects";
 import Project from "./Project";
 
-function Projects() {
+class Projects extends Component {
+  rennder() {
     return (
+      <div>
+        <h2>Highlighted Projects</h2>
         <div>
-            <h2>Highlighted Projects</h2>
-            <div>
-                {
-                    PROJECTS.map(PROJECT => {
-                        return (
-                            <div key={PROJECT.id} project={PROJECT}>
-                                {PROJECT.title}</div>
-                        );
-                    })
-                }
-            </div>
+          {PROJECTS.map((PROJECT) => (
+            <Project key={PROJECT.id} project={PROJECT} />
+          ))}
         </div>
-
+      </div>
     );
+  }
 }
 
 export default Projects;
